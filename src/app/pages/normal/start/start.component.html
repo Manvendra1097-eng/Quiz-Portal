@@ -1,8 +1,10 @@
 <div class="container-fluid" *ngIf="!isSubmit">
   <div class="row">
-    <div class="col-md-2">
+    <div class="col-md-2 mt-3">
       <!-- Instruction -->
-      <h3>Instruction</h3>
+      <div class="progress">
+        <p class="h4 fw-bold">Instruction</p>
+      </div>
     </div>
     <div class="col-md-8">
       <!-- question -->
@@ -71,23 +73,25 @@
     </div>
     <div class="col-md-2">
       <!-- progress -->
-      <mat-card class="mt-4">
-        <mat-card-header>
-          <mat-card-title>Progress </mat-card-title>
-          <mat-card-subtitle
-            >Quiz will automatically submited when progress reach
-            0:0</mat-card-subtitle
-          >
-        </mat-card-header>
-        <mat-card-content>
-          <p class="text-center">{{ getFormatedTime() }}</p>
-          <mat-spinner
-            mode="determinate"
-            [value]="(timer / (questions.length * 2 * 60)) * 100"
-            style="margin: auto"
-          ></mat-spinner>
-        </mat-card-content>
-      </mat-card>
+      <div class="progress mt-1">
+        <mat-card>
+          <mat-card-header>
+            <mat-card-title>Progress </mat-card-title>
+            <mat-card-subtitle
+              >Quiz will automatically submited when progress reach
+              0:0</mat-card-subtitle
+            >
+          </mat-card-header>
+          <mat-card-content>
+            <p class="text-center">{{ getFormatedTime() }}</p>
+            <mat-spinner
+              mode="determinate"
+              [value]="(timer / (questions.length * 2 * 60)) * 100"
+              style="margin: auto"
+            ></mat-spinner>
+          </mat-card-content>
+        </mat-card>
+      </div>
     </div>
   </div>
 </div>

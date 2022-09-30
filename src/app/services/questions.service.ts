@@ -18,6 +18,11 @@ export class QuestionsService {
     return this.http.get(`${baseUrl}/question/quiz/${id}`);
   }
 
+  // get question by quiz for Test with page
+  getQuestionByQuizForTestwithPage(id: number, page: number) {
+    return this.http.get(`${baseUrl}/question/quiz/${id}/page?page=${page}`);
+  }
+
   // Add Question
   addQuestion(question: any) {
     return this.http.post(`${baseUrl}/question/`, question);
