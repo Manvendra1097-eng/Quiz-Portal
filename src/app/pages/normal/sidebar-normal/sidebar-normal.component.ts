@@ -18,7 +18,6 @@ export class SidebarNormalComponent implements OnInit {
     this._category.getAllCategory().subscribe({
       next: (data) => {
         this.category = data;
-        console.log(this.category);
       },
       error: (error) => {
         this._snack.open('Something went wrong', 'close', {
