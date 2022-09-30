@@ -75,7 +75,7 @@
               <td class="w-100">
                 <mat-form-field appearance="outline" class="w-100">
                   <mat-label>Choose an Category</mat-label>
-                  <mat-select name="cId" [(ngModel)]="quizz.cId">
+                  <mat-select name="cId" [(ngModel)]="quizz.category.cId">
                     <mat-option *ngFor="let c of category" [value]="c.cId">{{
                       c.tittle
                     }}</mat-option>

@@ -15,7 +15,9 @@ export class AddQuizzesComponent implements OnInit {
   category: any = [];
   quizz = {
     active: true,
-    cId: '',
+    category: {
+      cId: '',
+    },
     description: '',
     maxMarks: '',
     noOfQuestion: '',
@@ -55,7 +57,7 @@ export class AddQuizzesComponent implements OnInit {
       return;
     }
 
-    if (this.quizz.cId == '' || this.quizz.cId == null) {
+    if (this.quizz.category.cId == '' || this.quizz.category.cId == null) {
       this._snack.open('Category is Required', 'close', {
         duration: 3000,
         horizontalPosition: 'center',
@@ -67,6 +69,7 @@ export class AddQuizzesComponent implements OnInit {
 
     this._quizz.addQuizz(this.quizz).subscribe({
       next: (data: any) => {
+        console.log(this.quizz);
         this.quizz = data;
         form.reset();
         this._snack.open('Quiz Added Successfully', 'close', {
