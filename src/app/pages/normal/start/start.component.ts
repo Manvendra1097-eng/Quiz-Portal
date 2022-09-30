@@ -94,7 +94,7 @@ export class StartComponent implements OnInit {
         this.correctAnswers++;
         this.attempted++;
         this.marksGot += marksSingle;
-      } else if (q.givenAnswer.trim() == '') {
+      } else if (q.givenAnswer != '') {
         this.attempted++;
       }
     });
@@ -115,5 +115,9 @@ export class StartComponent implements OnInit {
     let mm = Math.floor(this.timer / 60);
     let ss = this.timer - mm * 60;
     return `${mm} min: ${ss} sec`;
+  }
+
+  print() {
+    window.print();
   }
 }

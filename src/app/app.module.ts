@@ -42,7 +42,7 @@ import { LoadQuizzesComponent } from './pages/normal/load-quizzes/load-quizzes.c
 import { InstructionsComponent } from './pages/normal/instructions/instructions.component';
 import { StartComponent } from './pages/normal/start/start.component';
 import { NgxUiLoaderModule, NgxUiLoaderHttpModule } from 'ngx-ui-loader';
-import { TestComponent } from './pages/normal/test/test.component';
+import { NormalWelcomeComponent } from './pages/normal/normal-welcome/normal-welcome.component';
 
 @NgModule({
   declarations: [
@@ -68,7 +68,7 @@ import { TestComponent } from './pages/normal/test/test.component';
     LoadQuizzesComponent,
     InstructionsComponent,
     StartComponent,
-    TestComponent,
+    NormalWelcomeComponent,
   ],
   imports: [
     BrowserModule,

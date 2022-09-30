@@ -112,6 +112,10 @@
           <table class="table mt-2">
             <thead>
               <tr>
+                <th>Total Questions</th>
+                <td>{{ questions.length }}</td>
+              </tr>
+              <tr>
                 <th>Attempted Questions</th>
                 <td>{{ attempted }}</td>
               </tr>
@@ -127,7 +131,9 @@
           </table>
         </mat-card-content>
         <mat-card-actions class="text-center">
-          <button mat-raised-button color="primary">Print</button>
+          <button (click)="print()" mat-raised-button color="primary">
+            Print
+          </button>
         </mat-card-actions>
       </mat-card>
     </div>

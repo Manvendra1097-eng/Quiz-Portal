@@ -42,10 +42,10 @@ export class LoginComponent implements OnInit {
 
             if (this.loginService.getUserRole() == 'ADMIN') {
               this.loginService.loginStatus.next(true);
-              this.route.navigate(['admin']);
+              this.route.navigate(['admin/w']);
             } else if (this.loginService.getUserRole() == 'NORMAL') {
               this.loginService.loginStatus.next(true);
-              this.route.navigate(['user/0']);
+              this.route.navigate(['user/w']);
             } else {
               this.loginService.logout();
               this.show = true;
