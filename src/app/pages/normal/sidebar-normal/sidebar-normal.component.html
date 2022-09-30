@@ -11,7 +11,7 @@
 
     <li *ngFor="let c of category">
       <button [routerLink]="'/user/' + c.cId" class="btn btn-dark">
-        {{ c.tittle }}
+        <span *ngIf="c">{{ c.tittle }}</span>
       </button>
       <hr />
     </li>

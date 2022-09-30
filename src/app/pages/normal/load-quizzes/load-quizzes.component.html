@@ -6,7 +6,9 @@
         <mat-card-header>
           <div mat-card-avatar class="example-header-image"></div>
           <mat-card-title>{{ q.tittle }}</mat-card-title>
-          <mat-card-subtitle>{{ q.category.tittle }}</mat-card-subtitle>
+          <mat-card-subtitle *ngIf="q.category">{{
+            q.category.tittle
+          }}</mat-card-subtitle>
         </mat-card-header>
         <mat-card-content class="truncate">{{
           q.description
