@@ -1,0 +1,68 @@
+<div class="d-flex flex-column flex-shrink-0 p-3 text-bg-dark mt-2 hi-100 sidebar">
+  <p class="text-center fw-b fs-3">Menu</p>
+  <hr />
+  <ul class="nav nav-pills flex-column mb-auto">
+    <li class="nav-item text-center">
+      <a [routerLink]="'/admin'" class="nav-link text-white btn btn-dark">
+        <span>
+          <i class="bi bi-house-fill me-2" style="font-size: 1.5rem"></i>
+          Home</span
+        >
+      </a>
+    </li>
+
+    <hr />
+    <li>
+      <a
+        [routerLink]="'/admin/profile'"
+        class="nav-link text-white btn btn-dark"
+      >
+        <i class="bi bi-person-bounding-box me-2" style="font-size: 1.5rem"></i>
+        Profile
+      </a>
+    </li>
+    <hr />
+    <li>
+      <a
+        [routerLink]="'/admin/category'"
+        class="nav-link text-white btn btn-dark"
+      >
+        <i class="bi bi-collection-fill me-2" style="font-size: 1.5rem"></i>
+        Category
+      </a>
+    </li>
+    <hr />
+    <li>
+      <a
+        [routerLink]="'/admin/add-category'"
+        class="nav-link text-white btn btn-dark"
+      >
+        <i class="bi bi-cloud-plus-fill" style="font-size: 1.5rem"></i>
+        <span class="ms-2">Add Category</span>
+      </a>
+    </li>
+    <hr />
+    <li>
+      <a [routerLink]="'/admin/quizz'" class="nav-link text-white btn btn-dark">
+        <i
+          class="bi bi-question-diamond-fill me-2"
+          style="font-size: 1.5rem"
+        ></i>
+        Quizzes
+      </a>
+    </li>
+    <hr />
+
+    <li>
+      <a
+        [routerLink]="'/admin/add-quizz'"
+        class="nav-link text-white btn btn-dark"
+      >
+        <i class="bi bi-journal-plus me-2" style="font-size: 1.5rem"></i>
+        Add Quizzes
+      </a>
+    </li>
+    <hr />
+  </ul>
+  <hr />
+</div>

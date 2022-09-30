@@ -1,0 +1,131 @@
+<div class="container-fluid" *ngIf="!isSubmit">
+  <div class="row">
+    <div class="col-md-2">
+      <!-- Instruction -->
+      <h3>Instruction</h3>
+    </div>
+    <div class="col-md-8">
+      <!-- question -->
+      <ng-container *ngIf="questions">
+        <h1 class="text-center mt-2">
+          On Going Quiz <b>{{ questions[0].quiz.tittle }}</b>
+        </h1>
+        <!-- question start here... -->
+        <mat-card *ngFor="let q of questions; let i = index" class="mt-2">
+          <mat-card-content>
+            <p>
+              <b>Q{{ i + 1 }}) </b> <span [innerHTML]="q.content"></span>
+            </p>
+
+            <!-- option 1 and 2 -->
+            <div class="row mt-2">
+              <div class="col-md-6">
+                <input
+                  [(ngModel)]="q.givenAnswer"
+                  type="radio"
+                  [value]="q.option1"
+                  name="{{ i }}"
+                />
+                {{ q.option1 }}
+              </div>
+              <div class="col-md-6">
+                <input
+                  type="radio"
+                  [value]="q.option2"
+                  name="{{ i }}"
+                  [(ngModel)]="q.givenAnswer"
+                />
+                {{ q.option2 }}
+              </div>
+            </div>
+            <!-- option 3 and 4 -->
+            <div class="row mt-2">
+              <div class="col-md-6">
+                <input
+                  type="radio"
+                  [value]="q.option3"
+                  name="{{ i }}"
+                  [(ngModel)]="q.givenAnswer"
+                />
+                {{ q.option3 }}
+              </div>
+              <div class="col-md-6">
+                <input
+                  type="radio"
+                  [value]="q.option4"
+                  name="{{ i }}"
+                  [(ngModel)]="q.givenAnswer"
+                />
+                {{ q.option4 }}
+              </div>
+            </div>
+          </mat-card-content>
+        </mat-card>
+        <!-- question ends here....  -->
+        <p class="text-center mt-1">
+          <button (click)="submitQuiz()" mat-raised-button color="primary">
+            Submit
+          </button>
+        </p>
+      </ng-container>
+    </div>
+    <div class="col-md-2">
+      <!-- progress -->
+      <mat-card class="mt-4">
+        <mat-card-header>
+          <mat-card-title>Progress </mat-card-title>
+          <mat-card-subtitle
+            >Quiz will automatically submited when progress reach
+            0:0</mat-card-subtitle
+          >
+        </mat-card-header>
+        <mat-card-content>
+          <p class="text-center">{{ getFormatedTime() }}</p>
+          <mat-spinner
+            mode="determinate"
+            [value]="(timer / (questions.length * 2 * 60)) * 100"
+            style="margin: auto"
+          ></mat-spinner>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div>
+<!-- {{ questions | json }} -->
+
+<!-- SHOW THE RESULT HERE......... -->
+
+<div class="container h-75" *ngIf="isSubmit">
+  <div class="row d-flex justify-content-center align-items-center h-80">
+    <div class="col-md-6">
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title class="mt-2">
+            <p class="text-center">Quiz Result</p>
+          </mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <table class="table mt-2">
+            <thead>
+              <tr>
+                <th>Attempted Questions</th>
+                <td>{{ attempted }}</td>
+              </tr>
+              <tr>
+                <th>Correct Questions</th>
+                <td>{{ correctAnswers }}</td>
+              </tr>
+              <tr>
+                <th>Marks Got</th>
+                <td>{{ marksGot }}</td>
+              </tr>
+            </thead>
+          </table>
+        </mat-card-content>
+        <mat-card-actions class="text-center">
+          <button mat-raised-button color="primary">Print</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+</div>

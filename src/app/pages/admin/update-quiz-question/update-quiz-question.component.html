@@ -1,0 +1,98 @@
+<div class="conatainer">
+  <p mat-card-title class="text-center mt-5">Add Question</p>
+  <mat-card>
+    <form #add="ngForm" (ngSubmit)="updateQuestion(add)">
+      <mat-form-field appearance="outline" class="w-100">
+        <mat-label class="fw-bold">Enter Your Question </mat-label>
+        <input
+          name="content"
+          [(ngModel)]="question.content"
+          type="text"
+          matInput
+          placeholder="Question Content"
+        />
+      </mat-form-field>
+
+      <table class="w-100">
+        <tr>
+          <td>
+            <mat-form-field appearance="outline" class="w-100">
+              <mat-label class="fw-bold">Enter 1st Option </mat-label>
+              <input
+                name="option1"
+                [(ngModel)]="question.option1"
+                type="text"
+                matInput
+                placeholder="First Option"
+              />
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field appearance="outline" class="w-100">
+              <mat-label class="fw-bold">Enter 2nd Option </mat-label>
+              <input
+                name="option2"
+                [(ngModel)]="question.option2"
+                type="text"
+                matInput
+                placeholder="Second Option"
+              />
+            </mat-form-field>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <mat-form-field appearance="outline" class="w-100">
+              <mat-label class="fw-bold">Enter 3rd Option </mat-label>
+              <input
+                name="option3"
+                [(ngModel)]="question.option3"
+                type="text"
+                matInput
+                placeholder="Third Option"
+              />
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field appearance="outline" class="w-100">
+              <mat-label class="fw-bold">Enter 4th Option </mat-label>
+              <input
+                name="option4"
+                [(ngModel)]="question.option4"
+                type="text"
+                matInput
+                placeholder="Forth Option"
+              />
+            </mat-form-field>
+          </td>
+        </tr>
+      </table>
+
+      <mat-form-field class="w-100" appearance="outline">
+        <mat-label class="fw-bold">Choose an Answer</mat-label>
+        <mat-select name="answer" [(ngModel)]="question.answer">
+          <mat-option *ngIf="question.option1" [value]="question.option1">
+            {{ question.option1 }}</mat-option
+          >
+          <mat-option *ngIf="question.option2" [value]="question.option2">
+            {{ question.option2 }}</mat-option
+          >
+          <mat-option *ngIf="question.option3" [value]="question.option3">
+            {{ question.option3 }}</mat-option
+          >
+          <mat-option *ngIf="question.option4" [value]="question.option4">
+            {{ question.option4 }}</mat-option
+          >
+        </mat-select>
+      </mat-form-field>
+
+      <mat-card-actions>
+        <button type="submit" class="w-100" mat-raised-button color="primary">
+          Add Question
+        </button>
+      </mat-card-actions>
+    </form>
+    <!-- {{ question | json }} -->
+  </mat-card>
+</div>

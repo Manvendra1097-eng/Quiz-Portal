@@ -1,0 +1,61 @@
+<div class="container">
+  <div class="align-center">
+    <mat-card>
+      <mat-list>
+        <div class="h1 fw-bold text-center" mat-card-title>Quizzes</div>
+        <mat-card-actions>
+          <div class="text-center">
+            <a routerLink="/admin/add-quizz" mat-mini-fab color="primary"
+              ><mat-icon>add</mat-icon></a
+            >
+          </div>
+        </mat-card-actions>
+        <hr />
+        <mat-list-item *ngFor="let quizz of quizzes.content">
+          <mat-icon mat-list-icon class="icon-display me-2"
+            >psychology_alt</mat-icon
+          >
+          <div mat-line class="fw-bold">{{ quizz.tittle }}</div>
+          <div mat-line mat-card-subtitle class="fw-bold">
+            {{ quizz.description }}
+          </div>
+          <div class="fw-bold btn text-v" mat-card-subtitle>
+            M.M[{{ quizz.maxMarks }}]
+          </div>
+          <div class="fw-bold btn text-v" mat-card-subtitle>
+            Questions[{{ quizz.noOfQuestion }}]
+          </div>
+
+          <div mat-line class="mt-2 mb-2 d-flex justify-content-center">
+            <button
+              [routerLink]="'/admin/questions/' + quizz.id + '/' + quizz.tittle"
+              mat-stroked-button
+              color="primary"
+              class="me-2 w-f bg"
+            >
+              Questions
+            </button>
+            <button
+              [routerLink]="'/admin/quizz/' + quizz.id"
+              mat-stroked-button
+              color="primary"
+              class="me-2 w-f bg"
+            >
+              Update
+            </button>
+            <button
+              (click)="deleteQuiz(quizz.id)"
+              mat-stroked-button
+              color="primary"
+              class="w-f bg"
+            >
+              Delete
+            </button>
+          </div>
+
+          <mat-divider></mat-divider>
+        </mat-list-item>
+      </mat-list>
+    </mat-card>
+  </div>
+</div>

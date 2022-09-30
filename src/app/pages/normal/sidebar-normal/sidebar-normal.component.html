@@ -1,0 +1,19 @@
+<div class="d-flex flex-column flex-shrink-0 p-3 text-bg-dark mt-2 sidebar">
+  <p class="text-center fw-b fs-3">Categories</p>
+  <hr />
+  <ul class="nav nav-pills flex-column mb-auto">
+    <li>
+      <button [routerLink]="'/user/' + 0" class="btn btn-dark">
+        All Quizzes
+      </button>
+      <hr />
+    </li>
+
+    <li *ngFor="let c of category">
+      <button [routerLink]="'/user/' + c.cId" class="btn btn-dark">
+        {{ c.tittle }}
+      </button>
+      <hr />
+    </li>
+  </ul>
+</div>

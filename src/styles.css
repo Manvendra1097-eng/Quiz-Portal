@@ -1,1 +1,35 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~bootstrap-icons/font/bootstrap-icons.css";
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.green-snack {
+  background: rgb(212, 237, 218);
+  color: #155724;
+}
+
+.green-snack .mat-simple-snackbar-action {
+  background: rgb(212, 237, 218);
+  /* color: #9d1c24; */
+  color: #673ab7;
+}
+
+.red-snack {
+  background: #f8d7da;
+  color: #9d1c24;
+}
+
+.red-snack .mat-simple-snackbar-action {
+  background: #f8d7da;
+  color: #673ab7;
+}
+
+.icon-display {
+  transform: scale(2);
+}
