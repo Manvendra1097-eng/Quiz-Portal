@@ -1,0 +1,10 @@
+.example-card {
+  max-width: 800px;
+  margin-bottom: 8px;
+}
+
+img {
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+}

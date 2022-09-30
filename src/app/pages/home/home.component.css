@@ -1,0 +1,17 @@
+.center {
+  padding-top: 20%;
+  margin: 0;
+}
+.hero {
+  background-image: linear-gradient(
+      rgba(34, 34, 34, 0.6),
+      rgba(34, 34, 34, 0.6)
+    ),
+    url(../../../assets/banner1.jpg);
+  background-size: cover;
+  color: #fff;
+}
+
+.hig-100 {
+  height: 91vh;
+}

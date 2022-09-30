@@ -1,0 +1,65 @@
+<div class="container-fluid" *ngIf="catId == 0">
+  <div class="h1 fw-bold text-center text-v">Quizzes</div>
+  <div class="row" *ngIf="quizzes">
+    <div class="col-md-4" *ngFor="let q of quizzes.content">
+      <mat-card>
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image"></div>
+          <mat-card-title>{{ q.tittle }}</mat-card-title>
+          <mat-card-subtitle *ngIf="q.category">{{
+            q.category.tittle
+          }}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content class="truncate">{{
+          q.description
+        }}</mat-card-content>
+        <mat-card-actions class="text-center">
+          <button
+            mat-button
+            class="text-danger"
+            [routerLink]="'/user/instructions/' + q.id"
+          >
+            Start
+          </button>
+          <button mat-button class="text-v">M.M[{{ q.maxMarks }}]</button>
+          <button mat-button class="text-v">
+            Questions[{{ q.noOfQuestion }}]
+          </button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+</div>
+
+<!-- for paticular category -->
+
+<div class="container-fluid" *ngIf="catId != 0">
+  <div class="h1 fw-bold text-center">Quizzes</div>
+  <div class="row" *ngIf="quizzesC">
+    <div class="col-md-4" *ngFor="let q of quizzesC">
+      <mat-card>
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image"></div>
+          <mat-card-title>{{ q.tittle }}</mat-card-title>
+          <mat-card-subtitle>{{ q.category.tittle }}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content class="truncate">{{
+          q.description
+        }}</mat-card-content>
+        <mat-card-actions class="text-center">
+          <button
+            mat-button
+            class="text-danger"
+            [routerLink]="'/user/instructions/' + q.id"
+          >
+            Start
+          </button>
+          <button mat-button class="text-v">M.M[{{ q.maxMarks }}]</button>
+          <button mat-button class="text-v">
+            Questions[{{ q.noOfQuestion }}]
+          </button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+</div>

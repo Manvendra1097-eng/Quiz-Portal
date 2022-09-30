@@ -1,0 +1,75 @@
+<div class="conatiner">
+  <p class="h1 fw-bold fs-2 text-center mt-2" mat-card-subtitle>
+    {{ quizz.tittle }} Quizz
+  </p>
+  <mat-divider></mat-divider>
+  <div class="row">
+    <div class="col-md-12">
+      <mat-card class="mt-2">
+        <mat-card-header>
+          <mat-card-title class="text-danger"
+            >Read the instructions carefully before begin test.</mat-card-title
+          >
+        </mat-card-header>
+        <mat-card-content class="ms-3">
+          <mat-divider></mat-divider>
+          <h1 class="h3 fw-bold" mat-card-title>Important Instructions:</h1>
+          <ul>
+            <li>This quizz is for practice purpose.</li>
+            <!-- let time for each question is 2 minutes -->
+            <li>
+              You have to submit quizz with in
+              <span class="text-v fw-bold"
+                >{{ quizz.noOfQuestion * 2 }} minutes.</span
+              >
+            </li>
+            <li>You can attempt quizz any number of time.</li>
+            <li>
+              There are
+              <span class="text-v fw-bold"
+                >{{ quizz.noOfQuestion }} number</span
+              >
+              of questions in quiz.
+            </li>
+            <li>
+              Each questions carry
+              <span class="fw-bold text-v">
+                {{ quizz.maxMarks / quizz.noOfQuestion }} marks.</span
+              >
+            </li>
+            <li>Don't leave question there is no negative marking.</li>
+            <li>All questions are multiple choice.</li>
+          </ul>
+          <mat-divider></mat-divider>
+          <h1 class="h3 fw-bold" mat-card-title>
+            Instruction to attempt quizz
+          </h1>
+          <ul>
+            <li>
+              Click <span class="fw-bold text-v">Start Test</span> button to
+              start the quiz.
+            </li>
+            <li>Time will start the moment you click the start test button.</li>
+            <li>
+              You can not resume this quiz, if interrupted due to any reason
+              quiz will over.
+            </li>
+            <li>Click next button to move next question.</li>
+            <li>
+              Click on <span class="fw-bold text-v">Submit Test</span> button on
+              complition of the quiz.
+            </li>
+            <li>
+              Report of the test is generated automatically in form of PDF copy.
+            </li>
+          </ul>
+        </mat-card-content>
+        <mat-card-actions class="text-center">
+          <button (click)="startQuiz()" mat-raised-button color="primary">
+            Start Quiz
+          </button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+</div>

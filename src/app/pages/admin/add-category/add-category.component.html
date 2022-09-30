@@ -1,0 +1,47 @@
+<div class="conatiner">
+  <div class="align-center">
+    <mat-card>
+      <div class="fw-bold text-center" mat-card-title>Add Category</div>
+      <div class="row mt-5">
+        <div class="col-md-6 offset-md-3">
+          <div *ngIf="show" class="alert alert-success">Category Added</div>
+          <form #add="ngForm" (ngSubmit)="addCategory(add)">
+            <!-- title -->
+            <mat-form-field class="w-100" appearance="outline">
+              <mat-label>Title</mat-label>
+              <input
+                (input)="showA()"
+                type="text"
+                placeholder="Category Title"
+                name="tittle"
+                matInput
+                [(ngModel)]="category.tittle"
+              />
+            </mat-form-field>
+            <!-- description -->
+            <mat-form-field class="w-100" appearance="outline">
+              <mat-label>Description</mat-label>
+              <textarea
+                (input)="showA()"
+                placeholder="Category Description"
+                name="description"
+                rows="15"
+                matInput
+                [(ngModel)]="category.description"
+              ></textarea>
+            </mat-form-field>
+
+            <button
+              type="submit"
+              mat-raised-button
+              color="primary"
+              class="w-100"
+            >
+              Add
+            </button>
+          </form>
+        </div>
+      </div>
+    </mat-card>
+  </div>
+</div>

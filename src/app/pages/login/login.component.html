@@ -1,0 +1,50 @@
+<div class="block vh-100 pt-5">
+  <div class="container pt-5">
+    <p class="h1 text-center fw-bold">Login</p>
+    <div class="row align-items-center">
+      <div class="col-md-4 offset-md-4">
+        <mat-card>
+          <div *ngIf="show" class="alert alert-danger">
+            <p>{{ message }}</p>
+          </div>
+          <form #login="ngForm" (ngSubmit)="loginForm(login)">
+            <!-- username -->
+            <mat-form-field appearance="outline" class="w-100">
+              <mat-label class="txt">Your Username</mat-label>
+              <input
+                (input)="reset()"
+                matInput
+                placeholder="Username"
+                name="username"
+                [(ngModel)]="user.username"
+              />
+            </mat-form-field>
+
+            <!-- password -->
+            <mat-form-field appearance="outline" class="w-100">
+              <mat-label class="txt">Your Password</mat-label>
+              <input
+                (input)="reset()"
+                matInput
+                placeholder="Password"
+                name="password"
+                type="password"
+                [(ngModel)]="user.password"
+              />
+            </mat-form-field>
+            <div class="container text-center">
+              <button
+                mat-stroked-button
+                color="primary"
+                type="submit"
+                class="txt"
+              >
+                Login
+              </button>
+            </div>
+          </form>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</div>

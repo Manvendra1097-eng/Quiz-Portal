@@ -1,0 +1,28 @@
+<div class="container mt-2">
+  <div class="align-center">
+    <mat-card>
+      <mat-list>
+        <div class="h1 fw-bold text-center" mat-card-title>Categories</div>
+        <mat-list-item *ngFor="let category of categories">
+          <mat-icon mat-list-icon>category</mat-icon>
+          <div mat-line class="fw-bold">{{ category.tittle }}</div>
+          <div mat-line mat-card-subtitle class="fw-bold">
+            {{ category.description }}
+          </div>
+        </mat-list-item>
+      </mat-list>
+
+      <!-- action -->
+      <mat-card-actions>
+        <div class="text-center">
+          <a mat-mini-fab color="primary" [routerLink]="'/admin/add-category'">
+            <mat-icon>add</mat-icon>
+          </a>
+        </div>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>
+
+<!-- <mat-card-title>Category Title</mat-card-title>
+      <mat-card-subtitle>About category</mat-card-subtitle> -->

@@ -1,0 +1,35 @@
+<mat-toolbar class="txt">
+  <!-- sticky-top -->
+  <a mat-icon-button [routerLink]="'/'">
+    <mat-icon>menu</mat-icon>
+  </a>
+  <span>E-PORTAL</span>
+  <span class="example-spacer"></span>
+
+  <a
+    *ngIf="!islogin"
+    mat-raised-button
+    color="primary"
+    class="me-2"
+    routerLink="/signup"
+    >Sign Up</a
+  >
+
+  <a
+    *ngIf="islogin"
+    class="me-2"
+    mat-raised-button
+    color="primary"
+    [routerLink]="'/' + roleName + '/w'"
+    >{{ user.firstName }}</a
+  >
+
+  <a *ngIf="!islogin" mat-raised-button color="primary" routerLink="/login"
+    >Login</a
+  >
+  <span *ngIf="islogin">
+    <button mat-raised-button color="primary" class="me-2" (click)="logout()">
+      Logout
+    </button>
+  </span>
+</mat-toolbar>
